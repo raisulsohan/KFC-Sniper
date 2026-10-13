@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KFC Sniper — 30s Animated Promo</title>
+<style>
+  :root { --bar: 60px; --fg: #f2eee8; --mut: #9a948c; --acc: #E4002B; --panel: #120f0e; --line: #241f1c; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #070505; color: var(--fg); overflow: hidden;
+    font: 13px "Segoe UI", -apple-system, system-ui, Roboto, sans-serif; }
+  #wrap { position: absolute; left: 0; right: 0; top: 0; bottom: var(--bar); overflow: hidden; }
+  #stage { position: absolute; left: 0; top: 0; transform-origin: 0 0; overflow: hidden; background: #000; cursor: pointer; }
+  #stage > canvas { position: absolute; left: 0; top: 0; display: block; }
+  body.render #wrap { bottom: 0; }
+  body.render #bar { display: none; }
+  #bar { position: absolute; left: 0; right: 0; bottom: 0; height: var(--bar); display: flex; align-items: center; gap: 6px;
+    padding: 0 12px; background: var(--panel); border-top: 1px solid var(--line); user-select: none; }
+  #bar button { all: unset; display: grid; place-items: center; min-width: 34px; height: 34px; padding: 0 6px; border-radius: 8px;
+    color: var(--fg); cursor: pointer; font-weight: 600; font-size: 12px; }
+  #bar button:hover { background: #221c1a; }
+  #bar button:focus-visible { outline: 2px solid var(--acc); outline-offset: 1px; }
+  #bar button.on { color: #ff4b63; }
+  #bar svg { width: 18px; height: 18px; fill: currentColor; }
+  #bar .num { font-variant-numeric: tabular-nums; color: var(--mut); white-space: nowrap; min-width: 92px; text-align: center; }
+  #bar .num b { color: var(--fg); font-weight: 600; }
+  #seek { flex: 1; min-width: 80px; }
+  #vol { width: 80px; }
+  input[type=range] { accent-color: var(--acc); height: 4px; cursor: pointer; }
+  select { background: #1d1816; color: var(--fg); border: 1px solid var(--line); border-radius: 7px; height: 30px; padding: 0 6px; font: inherit; cursor: pointer; }
+  .seg { display: flex; background: #1d1816; border-radius: 9px; padding: 2px; }
+  .seg button { height: 28px !important; min-width: 44px !important; }
+  .seg button.on { background: #2e2623; color: var(--fg) !important; }
+  .sep { width: 1px; height: 24px; background: var(--line); margin: 0 4px; }
+  @media (max-width: 760px) { #vol, .hide-s { display: none; } #bar .num { min-width: 70px; } }
+</style>
+</head>
+<body>
+<div id="wrap"><div id="stage"><canvas id="c"></canvas></div></div>
+<audio id="snd" src="audio/mix.wav" preload="auto"></audio>
+<div id="bar">
+  <button id="bRestart" title="Restart (Home)"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+  <button id="bPrev" title="Previous frame (← or ,)"><svg viewBox="0 0 24 24"><path d="M7 5h2v14H7zM19 5v14l-9-7z"/></svg></button>
+  <button id="bPlay" title="Play / pause (Space or K)"><svg viewBox="0 0 24 24"><path id="playIcon" d="M7 4v16l13-8z"/></svg></button>
+  <button id="bNext" title="Next frame (→ or .)"><svg viewBox="0 0 24 24"><path d="M15 5h2v14h-2zM5 5v14l9-7z"/></svg></button>
+  <span class="num" id="time"><b>0.00</b> / 30.00</span>
+  <input id="seek" type="range" min="0" max="1799" step="1" value="0" title="Seek">
+  <span class="num" id="frame"><b>0</b> / 1799</span>
+  <select id="speed" title="Playback speed">
+    <option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="0.75">0.75×</option>
+    <option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option>
+  </select>
+  <button id="bLoop" title="Loop (L)"><svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2z"/></svg></button>
+  <div class="sep hide-s"></div>
+  <button id="bMute" title="Mute (M)"><svg viewBox="0 0 24 24"><path id="muteIcon" d="M3 9v6h4l5 5V4L7 9zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z"/></svg></button>
+  <input id="vol" type="range" min="0" max="1" step="0.01" value="0.9" title="Volume">
+  <div class="sep hide-s"></div>
+  <div class="seg" title="Aspect ratio"><button data-ar="16x9">16:9</button><button data-ar="4x5">4:5</button></div>
+  <button id="bFull" title="Fullscreen (F)"><svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4zm10 0h6v6h-2V6h-4zM4 14h2v4h4v2H4zm14 0h2v6h-6v-2h4z"/></svg></button>
+</div>
+<script src="kfc-sniper.min.js"></script>
+</body>
+</html>
