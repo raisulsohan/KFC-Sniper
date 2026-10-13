@@ -15,6 +15,13 @@ A deterministic 30-second HTML5 Canvas 2D animated promo film crafted with custo
 
 ---
 
+## 🌐 Live Demo
+
+Watch it directly in your browser:
+👉 **[https://raisulsohan.github.io/KFC-Sniper/](https://raisulsohan.github.io/KFC-Sniper/)**
+
+---
+
 ## 🚀 Running Locally
 
 Open with any local HTTP server:
