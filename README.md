@@ -2,6 +2,47 @@
 
 A deterministic 30-second HTML5 Canvas 2D animated promo film crafted with custom 2D cel rigging, stylized comic action hits, dynamic camera choreography, and fully synchronized 48 kHz stereo sound design.
 
+<div align="center">
+  <a href="https://raisulsohan.github.io/KFC-Sniper/">
+    <img src="assets/preview.gif" alt="KFC Sniper Animation Preview" width="100%" />
+  </a>
+  <p><em>Click the banner above to watch the full 60 fps interactive animation live in your browser.</em></p>
+</div>
+
+---
+
+## 🌐 Live Demo
+
+Watch the interactive 60 fps animation with full sound controls directly in your browser:  
+👉 **[https://raisulsohan.github.io/KFC-Sniper/](https://raisulsohan.github.io/KFC-Sniper/)**
+
+---
+
+## 📸 Sneak Peek / Key Moments
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="assets/01-sniper-aim.jpg" alt="Sniper Aim & Gearup" width="100%" />
+      <p align="center"><b>01 · The Gear-up & Scope</b></p>
+    </td>
+    <td width="50%">
+      <img src="assets/02-bang-extracrispy.jpg" alt="BANG Extra Crispy" width="100%" />
+      <p align="center"><b>02 · The BANG & Extra Crispy Burst</b></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="assets/03-chomp-hit.jpg" alt="CHOMP Direct Hit" width="100%" />
+      <p align="center"><b>03 · Direct Hit — CHOMP!</b></p>
+    </td>
+    <td width="50%">
+      <img src="assets/04-target-locked.jpg" alt="Target Locked" width="100%" />
+      <p align="center"><b>04 · Reticle & Target Locked</b></p>
+    </td>
+  </tr>
+</table>
+
 ---
 
 ## 🎬 Overview
@@ -12,13 +53,6 @@ A deterministic 30-second HTML5 Canvas 2D animated promo film crafted with custo
   - **16:9** Widescreen (`1920×1080` native, `3840×2160` 4K @ 2× scale)
   - **4:5** Vertical Social (`1080×1350` native, `2160×2700` @ 2× scale)
 - **Audio Mix:** 48 kHz stereo audio mix synchronized with sub-millisecond precision.
-
----
-
-## 🌐 Live Demo
-
-Watch it directly in your browser:
-👉 **[https://raisulsohan.github.io/KFC-Sniper/](https://raisulsohan.github.io/KFC-Sniper/)**
 
 ---
 
