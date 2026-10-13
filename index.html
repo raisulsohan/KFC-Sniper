@@ -58,6 +58,16 @@
   <div class="seg" title="Aspect ratio"><button data-ar="16x9">16:9</button><button data-ar="4x5">4:5</button></div>
   <button id="bFull" title="Fullscreen (F)"><svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4zm10 0h6v6h-2V6h-4zM4 14h2v4h4v2H4zm14 0h2v6h-6v-2h4z"/></svg></button>
 </div>
+<script>
+  /* A portrait screen (a phone) opens the 4:5 cut, unless a cut is already asked for. */
+  (function () {
+    var q = new URLSearchParams(location.search);
+    if (!q.has('ar') && !q.has('capture') && window.innerHeight > window.innerWidth) {
+      q.set('ar', '4x5');
+      history.replaceState(null, '', location.pathname + '?' + q.toString() + location.hash);
+    }
+  })();
+</script>
 <script src="kfc-sniper.min.js"></script>
 </body>
 </html>

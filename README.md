@@ -69,7 +69,7 @@ npx serve .
 ```
 
 Then visit:
-- **Default (16:9):** `http://localhost:8000/`
+- **Default (16:9):** `http://localhost:8000/` (a portrait screen, such as a phone, opens the 4:5 cut automatically)
 - **4:5 Social Version:** `http://localhost:8000/?ar=4x5`
 - **Deterministic 4K Render Mode:** `http://localhost:8000/?capture&scale=2`
 
